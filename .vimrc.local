@@ -1,0 +1,46 @@
+" set the spacebar as the leader key
+let mapleader = "\<Space>"
+
+" quick way to save file with leader f s
+nnoremap <leader>fs :w<cr>
+
+" avoid need for ESC key with the `fd` combo
+inoremap fd <Esc>
+vnoremap fd <Esc>
+
+" quickly edit dotfile
+nnoremap <leader>fed  :e ~/.vimrc.local <enter>
+nnoremap <leader>feb  :e ~/.vim.local/bundles.vim <enter>
+
+" displey relative line numbers for quick navigation
+set relativenumber
+
+" Expand Region Plugin
+vmap v <Plug>(expand_region_expand)
+vmap V <Plug>(expand_region_shrink)
+
+" Adjust buffer menu
+noremap <leader>bb :CtrlPBuffer<cr>
+
+" Comment
+noremap <leader>cl :Commentary<cr>
+
+" JavaScript
+
+" Main conceal settings.
+" Keeps everything concealed at all times.
+set conceallevel=1
+set concealcursor=nvic
+
+" JavaScript thanks to pangloss/vim-javascript
+let g:javascript_conceal_function = "λ"
+let g:javascript_conceal_this = "@"
+
+let g:easytags_async = 1
+let g:easytags_languages = {
+\   'javascript': {
+\       'cmd': '~/npm/bin/jsctags',
+\       'args': [],
+\       'fileoutput_opt': '-f'
+\   }
+\}
